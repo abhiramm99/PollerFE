@@ -1,0 +1,35 @@
+<h1>Welcome back to poller</h1>
+<nav>
+    <ul>
+        <li>
+            <div (click)="changeNavigation(landingNavOptions.Feed)">Feed</div>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <div (click)="changeNavigation(landingNavOptions.ExploreSpaces)">Explore Spaces</div>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <div (click)="changeNavigation(landingNavOptions.YourPolls)">Your Polls</div>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <div (click)="changeNavigation(landingNavOptions.YourSpaces)">Your Spaces</div>
+        </li>
+    </ul>
+    <ul>
+        <li>
+            <div (click)="changeNavigation(landingNavOptions.Profile)">Profile</div>
+        </li>
+    </ul>
+</nav>
+<div class="landing-container" [ngSwitch]="currSection">
+    <div class="landing-content" *ngSwitchCase="landingNavOptions.Feed">Your feed appears here</div>
+    <div class="landing-content" *ngSwitchCase="landingNavOptions.ExploreSpaces">You can explore spaces here</div>
+    <div class="landing-content" *ngSwitchCase="landingNavOptions.YourPolls">Checkout all polls created by you</div>
+    <div class="landing-content" *ngSwitchCase="landingNavOptions.YourSpaces">Checkout all spaces created by you</div>
+    <div class="landing-content" *ngSwitchCase="landingNavOptions.Profile">View/edit your profile</div>
+</div>

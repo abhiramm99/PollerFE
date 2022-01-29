@@ -1,0 +1,26 @@
+.full-spinner {
+    position: absolute;
+    left: 45vw;
+    top: 45vh;
+}
+
+.form-container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+}
+.left-part {
+    width: 70vw;
+    background-color: yellow;
+}
+.right-part {
+    width: 30vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: violet;
+}
+.login-form {
+    width: 90%;
+    height: 300px;
+}

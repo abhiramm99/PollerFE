@@ -3,6 +3,5 @@ export interface ISignUp {
     lastName: string,
     email: string,
     mobileNumber: string,
-    password: string,
-    confirmPassword: string
+    password: string
 }

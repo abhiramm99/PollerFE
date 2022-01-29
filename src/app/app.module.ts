@@ -7,22 +7,30 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LandingComponent } from './landing/landing.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialog } from '@angular/material/dialog';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    LandingComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [
-    FormBuilder
+    FormBuilder,
+    MatDialog
   ],
   bootstrap: [AppComponent]
 })

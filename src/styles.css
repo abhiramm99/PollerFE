@@ -1,1 +1,48 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+}
+
+.full-spinner {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.full-spinner:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #dfc;
+  border-color: red transparent black transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner-show {
+  display: block;
+}
+.spinner-hide {
+  display: none;
+}
+
+.login-form, .signup-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: whitesmoke;
+  border: 2px solid white;
+  border-radius: 15px;
+  box-shadow: 1px 1px 0px gray;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

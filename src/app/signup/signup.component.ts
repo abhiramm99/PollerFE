@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { SignupService } from './signup.service';
 import { ISignUp } from '../libraries/interfaces/core/signup.interface';
-
+import { ISignUpResponseData } from './signup.interface';
+import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -25,8 +26,11 @@ export class SignupComponent implements OnInit {
       alert("Password didn't match");
     } else {
       this.service.signUp(this.signupForm.value).subscribe(
-        (res) => console.log(res),
-        (err) => alert(err.error));
+        (res) => this.signupResponseHandler(res),
+        (err: HttpErrorResponse) => {
+          this.signupErrorHandler(err.error);
+        }
+      );
     }
   }
 
@@ -43,6 +47,22 @@ export class SignupComponent implements OnInit {
 
   private validatePasswordMatch(): boolean {
     return this.signupForm.value['password'] === this.signupForm.value['confirmPassword'];
+  }
+
+  private signupErrorHandler(err: ISignUpResponseData): void {
+    if (!err.signupSuccess) {
+      switch (err.errorType) {
+        case "userAlreadyExists" : alert(err.reason); break;
+        case "invalidPassword" : alert(err.reason); break;
+        case "unknownError" : alert("Sorry. An unknown error occured. Please try later"); break;
+      }
+    } else {
+
+    }
+  }
+
+  private signupResponseHandler(res: ISignUpResponseData | object): void {
+    console.log(res);
   }
 
   
