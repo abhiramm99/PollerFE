@@ -1,0 +1,33 @@
+ul {
+    list-style-type: none;
+}
+
+.space-card {
+    padding: 10px;
+    border: 2px solid cyan;
+}
+
+.main-container {
+    position: relative;
+}
+
+.add-new-space {
+    width: 100px;
+}
+
+.left-pane {
+    border: 1px solid black;
+    position: absolute;
+    top: 0px;
+    max-width: 30vw;
+    background-color: cyan;
+    box-shadow: 2px 2px 5px red;
+}
+
+.right-pane {
+    border: 1px solid black;
+}
+
+p {
+    margin-top: 30px;
+}

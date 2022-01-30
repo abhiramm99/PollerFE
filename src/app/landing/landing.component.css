@@ -1,0 +1,58 @@
+.logout {
+    width: 110px;
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logout:hover {
+    background-color: black;
+    color: whitesmoke;
+    box-shadow: 2px 2px 0px gray;
+}
+
+.logout:active {
+    box-shadow: none;
+}
+
+.nav-bar-container {
+    font-size: 18px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.nav-bar-container {
+    background: rgb(236, 241, 241);
+    padding-top: 10px;
+    text-align: center;
+}
+
+.nav-bar-container ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+
+i {
+    font-size: 2rem;
+}
+
+.nav-item {
+    height: auto;
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.selected {
+    text-shadow: 2px 2px 5px orange;
+    transform: scale(1.2);
+}

@@ -23,8 +23,9 @@ export class LoginComponent implements OnInit {
   public doLogin() {
     this.isLoading = true;
     this.service.doLogin(this.loginForm.value).subscribe(
-      (res) => {
+      (res: any) => {
         this.isLoading = false;
+        localStorage.setItem('user-token', res['loginToken']);
         this.router.navigate(['./landing']);
       },
       () => {

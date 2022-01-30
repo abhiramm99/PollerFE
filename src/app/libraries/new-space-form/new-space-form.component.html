@@ -1,0 +1,17 @@
+<div class="form-container">
+    <form [formGroup]="newSpaceForm" (ngSubmit)="submitForm()">
+        <div class="form-group">
+            <label for="">Space Name</label>
+            <input type="text" formControlName="spaceName" placeholder="Provide the title for your space">
+        </div>
+        <div class="form-group">
+            <label for="">Space Identifier</label>
+            <input type="text" formControlName="spaceIdentifier" placeholder="Give a 'username' to your space">
+        </div>
+        <div class="form-group">
+            <label for="">Description</label>
+            <input type="text" formControlName="spaceDescription" placeholder="What this is about..">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</div>

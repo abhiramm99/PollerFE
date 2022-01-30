@@ -1,7 +1,7 @@
 export enum LandingNavOptions {
     Feed,
     ExploreSpaces,
-    YourPolls,
-    YourSpaces,
+    MyPolls,
+    MySpaces,
     Profile
 }

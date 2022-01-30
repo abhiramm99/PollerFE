@@ -1,35 +1,51 @@
-<h1>Welcome back to poller</h1>
-<nav>
-    <ul>
-        <li>
-            <div (click)="changeNavigation(landingNavOptions.Feed)">Feed</div>
+<header class="header">
+    <!-- <h1 class="title">Welcome back to poller</h1>
+    <button (click)="logout()" class="logout"><i class="fas fa-sign-out-alt"></i>LOGOUT</button> -->
+</header>
+<nav class="nav-bar-container">
+    <i class="fab fa-pinterest"></i>
+    <ul class="nav-bar">
+        <li class="nav-item"
+            (click)="changeNavigation(landingNavOptions.Feed)"
+            [ngClass]="{'selected': currentSelection === landingNavOptions.Feed}"
+        >
+            <i class="fas fa-book"></i>
+            <div>Feed</div>
         </li>
-    </ul>
-    <ul>
-        <li>
-            <div (click)="changeNavigation(landingNavOptions.ExploreSpaces)">Explore Spaces</div>
+        <li class="nav-item"
+            (click)="changeNavigation(landingNavOptions.ExploreSpaces)"
+            [ngClass]="{'selected': currentSelection === landingNavOptions.ExploreSpaces}"
+        >
+            <i class="fab fa-wpexplorer"></i>
+            <div>Explore Spaces</div>
         </li>
-    </ul>
-    <ul>
-        <li>
-            <div (click)="changeNavigation(landingNavOptions.YourPolls)">Your Polls</div>
+        <li class="nav-item"
+            (click)="changeNavigation(landingNavOptions.MyPolls)"
+            [ngClass]="{'selected': currentSelection === landingNavOptions.MyPolls}"
+        >
+            <i class="fas fa-poll"></i>
+            <div>My Polls</div>
         </li>
-    </ul>
-    <ul>
-        <li>
-            <div (click)="changeNavigation(landingNavOptions.YourSpaces)">Your Spaces</div>
+        <li class="nav-item"
+            (click)="changeNavigation(landingNavOptions.MySpaces)"
+            [ngClass]="{'selected': currentSelection === landingNavOptions.MySpaces}"
+        >
+            <i class="fas fa-rocket"></i>
+            <div>My Spaces</div>
         </li>
-    </ul>
-    <ul>
-        <li>
-            <div (click)="changeNavigation(landingNavOptions.Profile)">Profile</div>
+        <li class="nav-item"
+            (click)="changeNavigation(landingNavOptions.Profile)"
+            [ngClass]="{'selected': currentSelection === landingNavOptions.Profile}"
+        >
+            <i class="fas fa-user-circle"></i>
+            <div>Profile</div>
         </li>
     </ul>
 </nav>
 <div class="landing-container" [ngSwitch]="currSection">
-    <div class="landing-content" *ngSwitchCase="landingNavOptions.Feed">Your feed appears here</div>
-    <div class="landing-content" *ngSwitchCase="landingNavOptions.ExploreSpaces">You can explore spaces here</div>
-    <div class="landing-content" *ngSwitchCase="landingNavOptions.YourPolls">Checkout all polls created by you</div>
-    <div class="landing-content" *ngSwitchCase="landingNavOptions.YourSpaces">Checkout all spaces created by you</div>
-    <div class="landing-content" *ngSwitchCase="landingNavOptions.Profile">View/edit your profile</div>
+    <app-feed *ngSwitchCase="landingNavOptions.Feed"></app-feed>
+    <app-explore-space *ngSwitchCase="landingNavOptions.ExploreSpaces"></app-explore-space>
+    <div class="landing-content" *ngSwitchCase="landingNavOptions.MyPolls">Checkout all polls created by you</div>
+    <div class="landing-content" *ngSwitchCase="landingNavOptions.MySpaces">Checkout all spaces created by you</div>
+    <app-profile *ngSwitchCase="landingNavOptions.Profile"></app-profile>
 </div>

@@ -1,0 +1,20 @@
+<div class="main-container">
+    <div class="left-pane">
+        <button (click)="createNewSpace()" title="Create New Space" class="add-new-space">
+            <i *ngIf="!showNewSpaceForm" class="fas fa-plus"></i>
+            <i *ngIf="showNewSpaceForm" class="fas fa-times"></i>
+        </button>
+        <app-new-space-form *ngIf="showNewSpaceForm"></app-new-space-form>
+    </div>
+    <div class="right-pane">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium, numquam. Repudiandae, inventore accusantium eum officia harum quas et quaerat vel aut eos nemo! Ipsam tenetur, nesciunt quod itaque culpa consectetur, reiciendis ut hic, quaerat voluptate sint! Vero quidem suscipit repellat obcaecati, itaque eos porro consectetur saepe dignissimos totam modi accusamus.</p>
+        <div class="space-container">
+            <ul *ngFor="let space of spaceList">
+                <li class="space-card"><span>{{ space.spaceName }}</span> || <span>{{ space.spaceDescription }}</span></li>
+            </ul>
+        </div>
+        <button class="page previous" (click)="changePage('-')" [disabled]="pageNumber === 1"><i class="fas fa-backward"></i></button>
+        <span>{{ pageNumber }}</span>
+        <button class="page next" (click)="changePage('+')"><i class="fas fa-forward"></i></button>
+    </div>
+</div>
